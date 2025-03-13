@@ -1,0 +1,47 @@
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 2rem;
+  
+    .login-card {
+      width: 100%;
+      max-width: 400px;
+      padding: 2rem;
+      animation: slideIn 0.5s ease-out;
+  
+      mat-form-field {
+        width: 100%;
+        margin-bottom: 1rem;
+      }
+  
+      button {
+        width: 100%;
+        margin-top: 1rem;
+        padding: 0.5rem;
+      }
+    }
+  
+    .error-message {
+      color: #f44336;
+      margin: 1rem 0;
+      text-align: center;
+    }
+    .login-title{
+      margin-bottom: 20px;
+      color: #764ba2;
+    }
+  }
+  
+  @keyframes slideIn {
+    from {
+      transform: translateY(-50px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }

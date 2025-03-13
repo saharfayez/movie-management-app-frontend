@@ -1,0 +1,35 @@
+<!-- user-dashboard.component.html -->
+<div class="user-dashboard-container">
+  <div class="header-section">
+    <h1>Welcome to Your Movie Dashboard</h1>
+    <button mat-raised-button color="primary" (click)="getAllMovies()">
+      <mat-icon>refresh</mat-icon> Refresh Movies
+    </button>
+  </div>
+
+  @if(movies.length==0){
+  <div class="no-movies">
+    <mat-icon>theaters</mat-icon>
+    <p>No movies available in the database.</p>
+  </div>
+  }
+
+  <div class="movie-grid">
+    @for(movie of movies;track movie.imdbID){
+    <mat-card class="movie-card">
+      <img mat-card-image [src]="movie.Poster" alt="{{ movie.Title }} poster" />
+      <mat-card-content>
+        <h3>{{ movie.Title }}</h3>
+        <p>{{ movie.Year }} • {{ movie.Type }}</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button 
+           color="accent" 
+           [routerLink]="['/user/dashboard', movie.imdbID]">
+          <mat-icon>info</mat-icon> View Details
+        </button>
+      </mat-card-actions>
+    </mat-card>
+    }
+  </div>
+</div>

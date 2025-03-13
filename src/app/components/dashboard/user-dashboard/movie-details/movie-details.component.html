@@ -1,0 +1,29 @@
+<div class="movie-details-container">
+  @if(movie){
+  <div class="movie-content">
+    <div class="poster-section">
+      <div class="poster-wrapper">
+        <img
+          [src]="movie.Poster"
+          alt="{{ movie.Title }} poster"
+          class="movie-poster"
+        />
+        <div class="poster-overlay"></div>
+      </div>
+      <button mat-raised-button class="back-button" (click)="goBackToDashboard()">
+        <mat-icon>arrow_back</mat-icon>
+        BACK TO DASHBOARD
+      </button>
+    </div>
+
+    <div class="info-section">
+      <h1 class="title">{{ movie.Title }}</h1>
+
+      <div class="metadata">
+        <div class="badge">{{ movie.Year }}</div>
+        <div class="badge">{{ movie.Type }}</div>
+      </div>
+    </div>
+  </div>
+  }
+</div>
